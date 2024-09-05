@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMZ Painting Service - Exquisite Gallery</title>
+    <meta name="description" content="Explore our gallery of premium painting projects. Witness the transformation of spaces through our expert craftsmanship and attention to detail.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0c1821;
+            --secondary-color: #d4af37;
+            --accent-color: #f1c40f;
+            --text-color: #333333;
+            --background-color: #ffffff;
+            --light-bg: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 2rem;
+            color: var(--background-color);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-left: 2.5rem;
+        }
+        
+        nav ul li a {
+            color: var(--background-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        
+        .section-title h2 {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        .gallery {
+            background-color: var(--light-bg);
+            padding: 10rem 0 8rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .gallery-item {
+            background-color: var(--background-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(12, 24, 33, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item-overlay-content {
+            text-align: center;
+            color: var(--background-color);
+            padding: 1rem;
+        }
+        
+        .gallery-item-overlay-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-item-overlay-content p {
+            font-size: 1rem;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .footer-links ul {
+            list-style-type: none;
+            display: flex;
+        }
+        
+        .footer-links ul li {
+            margin-left: 2rem;
+        }
+        
+        .footer-links ul li a {
+            color: var(--background-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .social-icons {
+            margin-top: 2rem;
+        }
+        
+        .social-icons a {
+            color: var(--background-color);
+            font-size: 1.8rem;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            
+            .section-title h2 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>GMZ Painting Service</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Exquisite Gallery</h2>
+                    <p>Immerse yourself in our portfolio of stunning transformations and unparalleled craftsmanship</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/NC33p03/1.png" alt="Elegant Living Room Transformation">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Elegant Living Room</h3>
+                                <p>A sophisticated blend of neutral tones creating a serene atmosphere</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/cFkqtxj/2.png" alt="Modern Kitchen Makeover">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Modern Kitchen Makeover</h3>
+                                <p>Sleek lines and vibrant accents for a contemporary culinary space</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/WG5TQTr/3.png" alt="Tranquil Bedroom Retreat">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Tranquil Bedroom Retreat</h3>
+                                <p>Soft hues and subtle textures for a peaceful sleeping sanctuary</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/vJS0325/4.png" alt="Vibrant Dining Area">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Vibrant Dining Area</h3>
+                                <p>Bold colors creating an energetic space for memorable meals</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/x1KHz4m/5.png" alt="Luxurious Bathroom Design">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Luxurious Bathroom Design</h3>
+                                <p>Elegant finishes and soothing tones for a spa-like experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/3fPjQD5/6.png" alt="Chic Home Office">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Chic Home Office</h3>
+                                <p>A perfect blend of style and functionality for productive work</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/z4Qc4BF/7.png" alt="Cozy Reading Nook">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Cozy Reading Nook</h3>
+                                <p>Warm colors creating an inviting space for relaxation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/y6nC1gM/8.png" alt="Stylish Entryway">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Stylish Entryway</h3>
+                                <p>A welcoming first impression with elegant color choices</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/dL8f9N1/9.png" alt="Rustic Dining Room">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Rustic Dining Room</h3>
+                                <p>Earthy tones complementing natural textures for a cozy ambiance</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/Dg1Ng4N/10.png" alt="Contemporary Living Space">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Contemporary Living Space</h3>
+                                <p>Clean lines and neutral palette for a modern aesthetic</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/CW8Rc5N/13.png" alt="Serene Bedroom Oasis">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Serene Bedroom Oasis</h3>
+                                <p>Calming blues creating a restful and rejuvenating atmosphere</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/sv4Bz0v/14.png" alt="Minimalist Kitchen Design">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Minimalist Kitchen Design</h3>
+                                <p>Sleek and simple with a focus on functionality and style</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/sVcWVhG/15.png" alt="Eclectic Living Room">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Eclectic Living Room</h3>
+                                <p>A vibrant mix of colors and styles for a unique living space</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/NCpVPhR/16.png" alt="Luxe Master Bathroom">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Luxe Master Bathroom</h3>
+                                <p>Opulent finishes and soothing colors for ultimate relaxation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/p2CrXTk/17.png" alt="Charming Nursery">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Charming Nursery</h3>
+                                <p>Soft pastels creating a dreamy space for little ones</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/1Mk5ZCb/18.png" alt="Industrial-Chic Loft">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Industrial-Chic Loft</h3>
+                                <p>Raw textures and bold colors for an urban sophisticated look</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/hWym7zq/19.png" alt="Coastal-Inspired Bedroom">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Coastal-Inspired Bedroom</h3>
+                                <p>Serene blues and whites evoking a beachside retreat</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/QYBYzBn/unnamed-3.jpg" alt="Mediterranean Patio">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Mediterranean Patio</h3>
+                                <p>Warm earth tones creating an inviting outdoor living space</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp">
+                        <img src="https://i.ibb.co/8mWySRy/unnamed-2.jpg" alt="Modern Home Exterior">
+                        <div class="gallery-item-overlay">
+                            <div class="gallery-item-overlay-content">
+                                <h3>Modern Home Exterior</h3>
+                                <p>Sleek lines and contrasting colors for striking curb appeal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>GMZ Painting Service</h2>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>&copy; 2023 GMZ Painting Service. All rights reserved.</p>
+            <p>Fully licensed and insured. ABN-58983270011 | Licence-136280C</p>
+            <div class="social-icons">
+                <a href="https://facebook.com/gmzpainting" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com/gmzpainting" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/company/gmzpainting" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://houzz.com/pro/gmzpainting" target="_blank" rel="noopener noreferrer"><i class="fab fa-houzz"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header shrink on scroll
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.style.padding = '0.5rem 0';
+                    header.style.backgroundColor = 'rgba(12, 24, 33, 0.9)';
+                } else {
+                    header.style.padding = '1rem 0';
+                    header.style.backgroundColor = 'var(--primary-color)';
+                }
+            });
+
+            // Animate elements on scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.animate-fadeInUp');
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementBottom = element.getBoundingClientRect().bottom;
+                    if (elementTop < window.innerHeight && elementBottom > 0) {
+                        element.style.animationPlayState = 'running';
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', animateOnScroll);
+            window.addEventListener('load', animateOnScroll);
+
+            // Lazy loading images
+            const lazyloadImages = document.querySelectorAll("img.lazy-load");    
+            const lazyload = () => {
+                lazyloadImages.forEach(img => {
+                    if(img.offsetTop < (window.innerHeight + window.pageYOffset)) {
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy-load');
+                    }
+                });
+                if(lazyloadImages.length == 0) { 
+                    document.removeEventListener("scroll", lazyload);
+                    window.removeEventListener("resize", lazyload);
+                    window.removeEventListener("orientationChange", lazyload);
+                }
+            }
+            
+            document.addEventListener("scroll", lazyload);
+            window.addEventListener("resize", lazyload);
+            window.addEventListener("orientationChange", lazyload);
+        });
+    </script>
+</body>
+</html>
