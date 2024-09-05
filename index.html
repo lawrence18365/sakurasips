@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GMZ Painting Service - Matraville's Premier Professional Painters</title>
-    <meta name="description" content="Transform your home or business with GMZ Painting Service. 25+ years of excellence in Matraville and surrounding areas. Premium painting solutions tailored to your needs.">
+    <meta name="description" content="Transform your space with GMZ Painting Service. 25+ years of excellence in Matraville and surrounding areas. Premium painting solutions tailored to your needs.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
+            --primary-color: #1a2a3a;
+            --secondary-color: #c0a080;
+            --accent-color: #e0c0a0;
             --text-color: #333333;
             --background-color: #ffffff;
-            --light-gray: #f5f5f5;
+            --light-bg: #f8f8f8;
         }
         
         * {
@@ -26,14 +26,14 @@
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--background-color);
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-weight: 700;
             line-height: 1.2;
         }
@@ -61,9 +61,10 @@
         }
         
         .logo h1 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--background-color);
             font-weight: 700;
+            letter-spacing: 1px;
         }
         
         nav ul {
@@ -78,9 +79,11 @@
         nav ul li a {
             color: var(--background-color);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 400;
             transition: color 0.3s ease;
             font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         nav ul li a:hover {
@@ -88,11 +91,11 @@
         }
         
         .hero {
-            background-image: linear-gradient(rgba(44, 62, 80, 0.5), rgba(44, 62, 80, 0.5)), url('https://page-images.websim.ai/GMZ%20Painting%20Service%20expert%20team_600x400xzYl7UIjUpDJB1tywdx54f0080042564.jpg');
+            background-image: linear-gradient(rgba(26, 42, 58, 0.7), rgba(26, 42, 58, 0.7)), url('https://page-images.websim.ai/GMZ%20Painting%20Service%20expert%20team_600x400xzYl7UIjUpDJB1tywdx54f0080042564.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: scroll;
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -103,16 +106,6 @@
             position: relative;
         }
         
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(to top, var(--background-color), transparent);
-        }
-        
         .hero-content {
             max-width: 800px;
             position: relative;
@@ -120,40 +113,40 @@
         }
         
         .hero h2 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 1.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             font-weight: 700;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin-bottom: 2.5rem;
-            font-weight: 400;
+            font-weight: 300;
         }
         
         .btn {
             display: inline-block;
-            background-color: var(--accent-color);
+            background-color: var(--secondary-color);
             color: var(--background-color);
             padding: 1rem 2rem;
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.3s ease;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 1rem;
         }
         
         .btn:hover {
-            background-color: var(--secondary-color);
+            background-color: var(--accent-color);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         
         section {
-            padding: 6rem 0;
+            padding: 8rem 0;
         }
         
         .section-title {
@@ -162,21 +155,22 @@
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--primary-color);
             margin-bottom: 1rem;
             font-weight: 700;
         }
         
         .section-title p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--text-color);
             max-width: 600px;
             margin: 0 auto;
+            font-weight: 300;
         }
         
         .services {
-            background-color: var(--background-color);
+            background-color: var(--light-bg);
         }
         
         .grid {
@@ -184,54 +178,59 @@
             gap: 2rem;
         }
         
-        .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-        
         .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         }
         
         .service-card {
             background-color: var(--background-color);
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
         
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
         
         .service-icon {
             font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
         }
         
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
             color: var(--primary-color);
             font-weight: 700;
         }
         
+        .service-card p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+        
         .btn-learn-more {
             display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: var(--light-gray);
-            color: var(--text-color);
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--background-color);
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 50px;
             transition: background-color 0.3s ease;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
         
         .btn-learn-more:hover {
-            background-color: var(--accent-color);
-            color: var(--background-color);
+            background-color: var(--secondary-color);
         }
         
         .about {
@@ -246,21 +245,22 @@
         }
         
         .about-text h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--accent-color);
             margin-bottom: 1.5rem;
         }
         
         .about-text h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-top: 2rem;
             margin-bottom: 1rem;
-            color: var(--accent-color);
+            color: var(--secondary-color);
         }
         
         .about-text p, .about-text ul {
             margin-bottom: 1.5rem;
             line-height: 1.8;
+            font-size: 1.1rem;
         }
         
         .about-text ul {
@@ -274,25 +274,26 @@
         
         .about-highlights {
             background-color: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            margin-top: 2rem;
+            padding: 3rem;
+            border-radius: 10px;
+            margin-top: 3rem;
         }
         
         .about-highlights ul li {
             display: flex;
             align-items: center;
-            justify-content: center;
             margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
         
         .about-highlights ul li i {
             color: var(--accent-color);
             margin-right: 1rem;
+            font-size: 1.2rem;
         }
         
         .testimonials {
-            background-color: var(--light-gray);
+            background-color: var(--light-bg);
         }
         
         .testimonial-grid {
@@ -303,41 +304,43 @@
         
         .testimonial {
             background-color: var(--background-color);
-            padding: 2rem;
-            border-radius: 15px;
+            padding: 3rem;
+            border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .testimonial-content {
             font-style: italic;
             margin-bottom: 1.5rem;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
         
         .testimonial-author {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--primary-color);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
         
         .cta {
             background-color: var(--secondary-color);
             text-align: center;
-            padding: 6rem 0;
+            padding: 8rem 0;
             color: var(--background-color);
         }
         
         .cta h2 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
         }
         
         .cta p {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin-bottom: 2.5rem;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 300;
         }
         
         .contact {
@@ -354,18 +357,18 @@
         }
         
         .contact-info h3, .contact-form h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
             color: var(--primary-color);
         }
         
         .contact-info p {
             margin-bottom: 1rem;
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
         
         .contact-info i {
-            color: var(--accent-color);
+            color: var(--secondary-color);
             margin-right: 1rem;
         }
         
@@ -391,7 +394,7 @@
             background-color: var(--primary-color);
             color: var(--background-color);
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
         }
         
         .social-icons {
@@ -410,13 +413,16 @@
         }
         
         @media (max-width: 768px) {
-            .hero {
-                background-attachment: scroll;
-                background-position: center center;
+            .hero h2 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
             }
             
             .about-content {
-                flex-direction: column;
+                padding: 0 1rem;
             }
             
             .contact-content {
@@ -428,25 +434,12 @@
             }
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: inherit;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.7;
-            z-index: -1;
-        }
-
         #service-map {
             height: 400px;
             width: 100%;
             margin-top: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
         }
         
         @keyframes fadeInUp {
@@ -461,7 +454,8 @@
         }
         
         .animate-fadeInUp {
-            animation: fadeInUp 0.6s ease-out;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
         }
     </style>
 </head>
@@ -576,7 +570,7 @@
                     </div>
                     <div class="testimonial animate-fadeInUp">
                         <div class="testimonial-content">
-                            "Excellent job!"
+                            "Excellent job! GMZ Painting Service transformed our home with their attention to detail and professional approach. Highly recommended!"
                         </div>
                         <div class="testimonial-author">- Suzanne Salter</div>
                     </div>
@@ -642,7 +636,177 @@
             const gmzLocation = { lat: -33.9611, lng: 151.2344 }; // Coordinates for Matraville, NSW
             const map = new google.maps.Map(document.getElementById('service-map'), {
                 zoom: 12,
-                center: gmzLocation
+                center: gmzLocation,
+                styles: [
+                    {
+                        "featureType": "all",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "weight": "2.00"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "all",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                            {
+                                "color": "#9c9c9c"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "all",
+                        "elementType": "labels.text",
+                        "stylers": [
+                            {
+                                "visibility": "on"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "color": "#f2f2f2"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#ffffff"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape.man_made",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#ffffff"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "saturation": -100
+                            },
+                            {
+                                "lightness": 45
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#eeeeee"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#7b7b7b"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [
+                            {
+                                "color": "#ffffff"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "visibility": "simplified"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "labels.icon",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "color": "#46bcec"
+                            },
+                            {
+                                "visibility": "on"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#c8d7d4"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#070707"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [
+                            {
+                                "color": "#ffffff"
+                            }
+                        ]
+                    }
+                ]
             });
             const marker = new google.maps.Marker({
                 position: gmzLocation,
@@ -675,8 +839,10 @@
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 100) {
                     header.style.padding = '0.5rem 0';
+                    header.style.backgroundColor = 'rgba(26, 42, 58, 0.9)';
                 } else {
                     header.style.padding = '1rem 0';
+                    header.style.backgroundColor = 'var(--primary-color)';
                 }
             });
 
@@ -696,28 +862,20 @@
             window.addEventListener('load', animateOnScroll);
 
             // Lazy loading images
-            var lazyloadImages = document.querySelectorAll("img.lazy-load");    
-            var lazyloadThrottleTimeout;
-            
-            function lazyload () {
-                if(lazyloadThrottleTimeout) {
-                    clearTimeout(lazyloadThrottleTimeout);
-                }    
-                
-                lazyloadThrottleTimeout = setTimeout(function() {
-                    var scrollTop = window.pageYOffset;
-                    lazyloadImages.forEach(function(img) {
-                        if(img.offsetTop < (window.innerHeight + scrollTop)) {
-                            img.src = img.dataset.src;
-                            img.classList.remove('lazy-load');
-                        }
-                    });
-                    if(lazyloadImages.length == 0) { 
-                        document.removeEventListener("scroll", lazyload);
-                        window.removeEventListener("resize", lazyload);
-                        window.removeEventListener("orientationChange", lazyload);
+            const lazyloadImages = document.querySelectorAll("img.lazy-load");    
+            const lazyload = () => {
+                lazyloadImages.forEach(img => {
+                    if(img.offsetTop < (window.innerHeight + window.pageYOffset)) {
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy-load');
                     }
-                }, 20);
+                });
+                if(lazy
+loadImages.length == 0) { 
+                    document.removeEventListener("scroll", lazyload);
+                    window.removeEventListener("resize", lazyload);
+                    window.removeEventListener("orientationChange", lazyload);
+                }
             }
             
             document.addEventListener("scroll", lazyload);
