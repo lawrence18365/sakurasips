@@ -7,16 +7,16 @@
     <meta name="description" content="Transform your home or business with GMZ Painting Service. 25+ years of excellence in Matraville and surrounding areas. Premium painting solutions tailored to your needs.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
         :root {
             --primary-color: #2c3e50;
-            --secondary-color: #e67e22;
+            --secondary-color: #34495e;
             --accent-color: #3498db;
-            --text-color: #333;
-            --light-bg: #f5f5f5;
-            --white: #ffffff;
+            --text-color: #333333;
+            --background-color: #ffffff;
+            --light-gray: #f5f5f5;
         }
         
         * {
@@ -26,14 +26,14 @@
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: var(--light-bg);
+            background-color: var(--background-color);
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-weight: 700;
             line-height: 1.2;
         }
@@ -62,7 +62,7 @@
         
         .logo h1 {
             font-size: 1.5rem;
-            color: var(--white);
+            color: var(--background-color);
             font-weight: 700;
         }
         
@@ -76,7 +76,7 @@
         }
         
         nav ul li a {
-            color: var(--white);
+            color: var(--background-color);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
@@ -84,7 +84,7 @@
         }
         
         nav ul li a:hover {
-            color: var(--secondary-color);
+            color: var(--accent-color);
         }
         
         .hero {
@@ -97,7 +97,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
+            color: var(--background-color);
             text-align: center;
             padding: 2rem;
             position: relative;
@@ -110,7 +110,7 @@
             left: 0;
             right: 0;
             height: 100px;
-            background: linear-gradient(to top, var(--white), transparent);
+            background: linear-gradient(to top, var(--background-color), transparent);
         }
         
         .hero-content {
@@ -134,8 +134,8 @@
         
         .btn {
             display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--white);
+            background-color: var(--accent-color);
+            color: var(--background-color);
             padding: 1rem 2rem;
             text-decoration: none;
             border-radius: 50px;
@@ -147,7 +147,7 @@
         }
         
         .btn:hover {
-            background-color: var(--accent-color);
+            background-color: var(--secondary-color);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
@@ -176,45 +176,67 @@
         }
         
         .services {
-            background-color: var(--white);
+            background-color: var(--background-color);
         }
         
-        .services-grid {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         
-        .service {
-            background-color: var(--light-bg);
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        .service-card {
+            background-color: var(--background-color);
+            border-radius: 8px;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .service:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
-        .service i {
+        .service-icon {
             font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
         }
         
-        .service h3 {
+        .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--primary-color);
             font-weight: 700;
         }
         
+        .btn-learn-more {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-learn-more:hover {
+            background-color: var(--accent-color);
+            color: var(--background-color);
+        }
+        
         .about {
             background-color: var(--primary-color);
-            color: var(--white);
+            color: var(--background-color);
         }
         
         .about-content {
@@ -225,7 +247,7 @@
         
         .about-text h2 {
             font-size: 2.5rem;
-            color: var(--secondary-color);
+            color: var(--accent-color);
             margin-bottom: 1.5rem;
         }
         
@@ -233,7 +255,7 @@
             font-size: 1.8rem;
             margin-top: 2rem;
             margin-bottom: 1rem;
-            color: var(--secondary-color);
+            color: var(--accent-color);
         }
         
         .about-text p, .about-text ul {
@@ -265,12 +287,12 @@
         }
         
         .about-highlights ul li i {
-            color: var(--secondary-color);
+            color: var(--accent-color);
             margin-right: 1rem;
         }
         
         .testimonials {
-            background-color: var(--light-bg);
+            background-color: var(--light-gray);
         }
         
         .testimonial-grid {
@@ -280,7 +302,7 @@
         }
         
         .testimonial {
-            background-color: var(--white);
+            background-color: var(--background-color);
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -302,7 +324,7 @@
             background-color: var(--secondary-color);
             text-align: center;
             padding: 6rem 0;
-            color: var(--white);
+            color: var(--background-color);
         }
         
         .cta h2 {
@@ -319,7 +341,7 @@
         }
         
         .contact {
-            background-color: var(--white);
+            background-color: var(--background-color);
         }
         
         .contact-content {
@@ -343,7 +365,7 @@
         }
         
         .contact-info i {
-            color: var(--secondary-color);
+            color: var(--accent-color);
             margin-right: 1rem;
         }
         
@@ -367,7 +389,7 @@
         
         footer {
             background-color: var(--primary-color);
-            color: var(--white);
+            color: var(--background-color);
             text-align: center;
             padding: 2rem 0;
         }
@@ -377,14 +399,14 @@
         }
         
         .social-icons a {
-            color: var(--white);
+            color: var(--background-color);
             font-size: 1.5rem;
             margin: 0 0.5rem;
             transition: color 0.3s ease;
         }
         
         .social-icons a:hover {
-            color: var(--secondary-color);
+            color: var(--accent-color);
         }
         
         @media (max-width: 768px) {
@@ -399,6 +421,10 @@
             
             .contact-content {
                 flex-direction: column;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -417,11 +443,25 @@
             z-index: -1;
         }
 
-        /* New styles for service map */
         #service-map {
             height: 400px;
             width: 100%;
             margin-top: 2rem;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out;
         }
     </style>
 </head>
@@ -460,21 +500,24 @@
                     <h2>Our Premium Services</h2>
                     <p>Discover our range of high-quality painting solutions tailored to your unique needs</p>
                 </div>
-                <div class="services-grid">
-                    <div class="service">
-                        <i class="fas fa-home"></i>
+                <div class="grid grid-3">
+                    <div class="service-card animate-fadeInUp">
+                        <div class="service-icon"><i class="fas fa-home"></i></div>
                         <h3>Luxury Interior Painting</h3>
                         <p>Elevate your living spaces with our premium interior painting services. We use top-tier paints and cutting-edge techniques to create stunning, long-lasting finishes.</p>
+                        <a href="#" class="btn-learn-more">Learn More</a>
                     </div>
-                    <div class="service">
-                        <i class="fas fa-building"></i>
+                    <div class="service-card animate-fadeInUp">
+                        <div class="service-icon"><i class="fas fa-building"></i></div>
                         <h3>Expert Exterior Painting</h3>
                         <p>Protect and beautify your property's exterior with our durable, weather-resistant painting solutions. We ensure a flawless finish that stands the test of time.</p>
+                        <a href="#" class="btn-learn-more">Learn More</a>
                     </div>
-                    <div class="service">
-                        <i class="fas fa-briefcase"></i>
+                    <div class="service-card animate-fadeInUp">
+                        <div class="service-icon"><i class="fas fa-briefcase"></i></div>
                         <h3>Bespoke Commercial Painting</h3>
                         <p>Enhance your business environment with our tailored commercial painting services. We work efficiently to minimize disruption and maximize impact.</p>
+                        <a href="#" class="btn-learn-more">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -519,19 +562,19 @@
                     <p>Hear from our satisfied clients about their experience with GMZ Painting Service</p>
                 </div>
                 <div class="testimonial-grid">
-                    <div class="testimonial">
+                    <div class="testimonial animate-fadeInUp">
                         <div class="testimonial-content">
                             "Moisa was honest, reliable, friendly and did a great job! He removed a floor to ceiling internal kitchen cupboard, rebuilt the ceiling above the old cupboard, reset the cornices, and painted the ceiling and adjoining wall. I would certainly hire him again and recommend him to anyone looking for an honest tradesman. Thankyou again for your work!"
                         </div>
                         <div class="testimonial-author">- Helena Ward</div>
                     </div>
-                    <div class="testimonial">
+                    <div class="testimonial animate-fadeInUp">
                         <div class="testimonial-content">
                             "Moisa did a fantastic job. Very nice man, polite & genuine. Would hire him again for another job if needed."
                         </div>
                         <div class="testimonial-author">- Maree Cameron</div>
                     </div>
-                    <div class="testimonial">
+                    <div class="testimonial animate-fadeInUp">
                         <div class="testimonial-content">
                             "Excellent job!"
                         </div>
@@ -636,6 +679,50 @@
                     header.style.padding = '1rem 0';
                 }
             });
+
+            // Animate elements on scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.animate-fadeInUp');
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementBottom = element.getBoundingClientRect().bottom;
+                    if (elementTop < window.innerHeight && elementBottom > 0) {
+                        element.style.animationPlayState = 'running';
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', animateOnScroll);
+            window.addEventListener('load', animateOnScroll);
+
+            // Lazy loading images
+            var lazyloadImages = document.querySelectorAll("img.lazy-load");    
+            var lazyloadThrottleTimeout;
+            
+            function lazyload () {
+                if(lazyloadThrottleTimeout) {
+                    clearTimeout(lazyloadThrottleTimeout);
+                }    
+                
+                lazyloadThrottleTimeout = setTimeout(function() {
+                    var scrollTop = window.pageYOffset;
+                    lazyloadImages.forEach(function(img) {
+                        if(img.offsetTop < (window.innerHeight + scrollTop)) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy-load');
+                        }
+                    });
+                    if(lazyloadImages.length == 0) { 
+                        document.removeEventListener("scroll", lazyload);
+                        window.removeEventListener("resize", lazyload);
+                        window.removeEventListener("orientationChange", lazyload);
+                    }
+                }, 20);
+            }
+            
+            document.addEventListener("scroll", lazyload);
+            window.addEventListener("resize", lazyload);
+            window.addEventListener("orientationChange", lazyload);
         });
     </script>
 </body>
